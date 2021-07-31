@@ -1,0 +1,46 @@
+.block-photographers__contact{
+    background-color: #FAFAFA;
+    width: 60%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr .5fr 1fr;
+    justify-items: center;
+}
+.photographers__title{
+    margin: 0 0 1rem 2rem;
+    color: #D3573C;
+    padding-top: 1rem;
+}
+.photographers__localisation__pages{
+    margin: 0 0 0 2rem;
+    font-size: 1rem;
+}
+.photographers__price__pages{
+    margin: 1rem 0 0 2rem;
+}
+.button-contact{
+    height: 3rem;
+    margin-top: 1rem;
+    background-color: #901C1C;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.photographers__img__pages{
+    width: 35%;
+    align-self: center;
+}
+.header-logo__pages{
+    margin: 1rem 0 2rem 3rem;
+}
+.block-photos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-content: center;
+}
+.photo-list{
+    width: 38rem;
+    height: 35rem;
+    object-fit: cover;
+}
