@@ -1,0 +1,29 @@
+.header{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+}
+.header-logo{
+    height: 3rem;
+    margin-top: 1rem;
+}
+.header-title{
+    color: #901C1C;
+}
+.order-list{
+    display: flex;
+}
+.nav-list{
+    list-style-type: none;
+}
+.nav-list__header{
+    margin: 1rem 1rem 0 0;
+}
+.nav-link{
+    text-decoration: none;
+    color: #901C1C;
+    border: solid 1px #C4C4C4;
+    border-radius: 1rem;
+    padding: 0 .5rem;
+}
+    
