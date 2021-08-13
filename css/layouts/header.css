@@ -4,11 +4,11 @@
     justify-items: center;
 }
 .header-logo{
-    height: 3rem;
-    margin-top: 1rem;
+    height: var(--spacing-xxl);
+    margin-top: var(--spacing-base);
 }
 .header-title{
-    color: #901C1C;
+    color: var(--color-primary);
 }
 .order-list{
     display: flex;
@@ -17,13 +17,13 @@
     list-style-type: none;
 }
 .nav-list__header{
-    margin: 1rem 1rem 0 0;
+    margin: var(--spacing-base) var(--spacing-base) 0 0;
 }
 .nav-link{
     text-decoration: none;
-    color: #901C1C;
-    border: solid 1px #C4C4C4;
-    border-radius: 1rem;
-    padding: 0 .5rem;
+    color: var(--color-primary);
+    border: var(--border-base);
+    border-radius: var(--spacing-base);
+    padding: var(--spacing-xs);
 }
     

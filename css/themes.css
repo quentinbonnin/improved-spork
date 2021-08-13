@@ -1,0 +1,16 @@
+:root {
+    --spacing-xs: 0.5rem;
+    --spacing-base:1rem;
+    --spacing-xl:2rem;
+    --spacing-xxl:3rem;
+    --border-base:solid 1px #C4C4C4;
+    --color-primary:#901C1C;
+    --color-secondary:#D3573C;
+    --light-grey:#FAFAFA;
+    --light-dark:#757575;
+    --font-size-base:1rem;
+    --font-size-large:2rem;
+    --border-radius-photos:7rem;
+    --margin-top-photographers:5rem;
+    --width-photo:35rem;
+    --height-photo:35rem;

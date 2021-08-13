@@ -2,16 +2,16 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-items: center;
-    margin-top: 5rem;
+    margin-top: var(--margin-top-photographers);
 }
 .photographers__img{
-    border-radius: 7rem;
+    border-radius: var(--border-radius-photos);
 }
 .photographers__name{
     text-align: center;
-    color: #D3573C;
-    font-size: 2rem;
-    margin: .5rem 0 .5rem 0;
+    color: var(--color-secondary);
+    font-size: var(--font-size-large);
+    margin: var(--spacing-xs) 0 var(--spacing-xs) 0;
 }
 .photographers__link{
     text-decoration: none;
@@ -23,15 +23,15 @@
 }
 .photographers__localisation{
     margin: 0;
-    color: #901C1C;
+    color: var(--color-primary);
 }
 .photographers__description{
     margin: 0;
 }
 .photographers__price{
     margin: 0;
-    color: #757575;
+    color: var(--light-dark);
 }
 .nav-list__main{
-    margin-right: .5rem;
+    margin-right: var(--spacing-xs);
 }

@@ -1,5 +1,5 @@
 .block-photographers__contact{
-    background-color: #FAFAFA;
+    background-color: var(--light-grey);
     width: 60%;
     margin: auto;
     display: grid;
@@ -7,21 +7,21 @@
     justify-items: center;
 }
 .photographers__title{
-    margin: 0 0 1rem 2rem;
-    color: #D3573C;
-    padding-top: 1rem;
+    margin: 0 0 var(--spacing-base) var(--spacing-xl);
+    color: var(--color-secondary);
+    padding-top: var(--spacing-base);
 }
 .photographers__localisation__pages{
-    margin: 0 0 0 2rem;
-    font-size: 1rem;
+    margin: 0 0 0 var(--spacing-xl);
+    font-size: var(--font-size-base);
 }
 .photographers__price__pages{
-    margin: 1rem 0 0 2rem;
+    margin: var(--spacing-base) 0 0 var(--spacing-xl);
 }
 .button-contact{
-    height: 3rem;
-    margin-top: 1rem;
-    background-color: #901C1C;
+    height: var(--spacing-xxl);
+    margin-top: var(--spacing-base);
+    background-color: var(--color-primary);
     border: none;
     border-radius: 5px;
     color: white;
@@ -31,7 +31,7 @@
     align-self: center;
 }
 .header-logo__pages{
-    margin: 1rem 0 2rem 3rem;
+    margin: var(--spacing-base) 0 var(--spacing-xl) var(--spacing-xxl);
 }
 .block-photos{
     display: grid;
@@ -40,7 +40,7 @@
     justify-content: center;
 }
 .photo-list{
-    width: 38rem;
-    height: 35rem;
+    width: var(--width-photo);
+    height: var(--height-photo);
     object-fit: cover;
 }
