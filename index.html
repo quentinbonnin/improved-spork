@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fisheye</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="header">
-        <img class="header-logo"src="logo.png" alt="Fisheye logo"> 
-        <nav class="header-nav">
-            <ul class="order-list order-list__header">
-                <li class="nav-list nav-list__header"><a class="nav-link nav-link__header"href="#">#Portrait</a></li>
-                <li class="nav-list nav-list__header"><a class="nav-link nav-link__header"href="#">#Art</a></li>
-                <li class="nav-list nav-list__header"><a class="nav-link nav-link__header"href="#">#Fashion</a></li>
-                <li class="nav-list nav-list__header"><a class="nav-link nav-link__header"href="#">#Architecture</a></li>
-                <li class="nav-list nav-list__header"><a class="nav-link nav-link__header"href="#">#Travel</a></li>
-                <li class="nav-list nav-list__header"><a class="nav-link nav-link__header"href="#">#Sport</a></li>
-                <li class="nav-list nav-list__header"><a class="nav-link nav-link__header"href="#">#Animals</a></li>
-                <li class="nav-list nav-list__header"><a class="nav-link nav-link__header"href="#">#Events</a></li>
-            </ul>
-        </nav>
-        <h1 class="header-title">Nos Photographes</h1>
+      <img class="header-logo" src="logo.png" alt="Fisheye logo" />
+      <div class="header-container__tag">
+        <span class="tag header__tag">#Portrait</span>
+        <span class="tag header__tag">#Art</span>
+        <span class="tag header__tag">#Fashion</span>
+        <span class="tag header__tag">#Architecture</span>
+        <span class="tag header__tag">#Travel</span>
+        <span class="tag header__tag">#Sport</span>
+        <span class="tag header__tag">#Animals</span>
+        <span class="tag header__tag">#Events</span>
+      </div>
+      <h1 class="header-title">Nos Photographes</h1>
     </header>
-    <main>
-     <div id="photographers" class="photographers"></div>
-    </main>
-    <script src="./js/photographers.js"></script>
-</body>
+    <main id="photographers"></main>
+    <script src="./js/index.js"></script>
+  </body>
 </html>

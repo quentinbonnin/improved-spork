@@ -1,37 +1,50 @@
-.photographers{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    justify-items: center;
-    margin-top: var(--margin-top-photographers);
+#photographers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin-top: var(--margin-top-photographers);
 }
-.photographers__img{
-    border-radius: var(--border-radius-photos);
+.photographer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
-.photographers__name{
-    text-align: center;
-    color: var(--color-secondary);
-    font-size: var(--font-size-large);
-    margin: var(--spacing-xs) 0 var(--spacing-xs) 0;
+.photographer__img {
+  border-radius: var(--border-radius-photos);
 }
-.photographers__link{
-    text-decoration: none;
+.photographer__name {
+  text-align: center;
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+  margin: var(--spacing-xs) 0 var(--spacing-xs) 0;
+  font-family: "DM sans", sans-serif;
 }
-.home-photographer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.photographer__link {
+  text-decoration: none;
 }
-.photographers__localisation{
-    margin: 0;
-    color: var(--color-primary);
+.home-photographer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.photographers__description{
-    margin: 0;
+.photographer__city {
+  margin: 0;
+  color: var(--color-primary);
 }
-.photographers__price{
-    margin: 0;
-    color: var(--light-dark);
+.photographer__tagline {
+  margin: 0;
 }
-.nav-list__main{
-    margin-right: var(--spacing-xs);
+.photographer__price {
+  margin: 0;
+  color: var(--light-dark);
+}
+.tag {
+  background-color: transparent;
+  border: var(--border-base);
+  border-radius: 2rem;
+  color: var(--color-primary);
+}
+.nav-list__main {
+  margin-right: var(--spacing-xs);
 }
