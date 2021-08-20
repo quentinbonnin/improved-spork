@@ -1,17 +1,21 @@
 const photographersPagesTemplate = (photographer) => {
   return `
-    <div>
+    <div class="block-photographer">
     <div class="photographer-infos">
-        <h1>${photographer.name}</h1>
-        <h2>${photographer.city},${photographer.country}</h2>
-        <p>${photographer.tagline}</p>
+        <h1 class="photographer__name photographer__name-page">${
+          photographer.name
+        }</h1>
+        <h2 class="photographer__city">${photographer.city},${
+    photographer.country
+  }</h2>
+        <p class="photographer__tagline">${photographer.tagline}</p>
         <p>${photographer.tags
           .map((tag) => `<button class="tag">#${tag}</button>`)
           .join(" ")}</p>
     </div>
         
-        <button>Contactez-moi</button>
-        <img class="photographer__img__page" src="/Home-img/${
+        <button class="photographer__contact">Contactez-moi</button>
+        <img class="photographer__img photographer__img-page" src="/Home-img/${
           photographer.portrait
         }" alt="${photographer.name}">
     </div>
@@ -37,3 +41,5 @@ const getPhotographers = async () => {
 
   displayPhotographerPage(photographers);
 })();
+
+const id = window.location.search.split("id=")[1];

@@ -1,46 +1,60 @@
-.block-photographers__contact{
-    background-color: var(--light-grey);
-    width: 60%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr .5fr 1fr;
-    justify-items: center;
+.block-photographer {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1.5fr;
+  background-color: #fafafa;
+  width: 75%;
+  height: 17rem;
+  margin: auto;
 }
-.photographers__title{
-    margin: 0 0 var(--spacing-base) var(--spacing-xl);
-    color: var(--color-secondary);
-    padding-top: var(--spacing-base);
+.photographer__contact {
+  height: 4rem;
+  color: white;
+  background-color: #911c1c;
+  border: none;
+  border-radius: 5px;
+  width: 10rem;
+  margin-top: 3rem;
 }
-.photographers__localisation__pages{
-    margin: 0 0 0 var(--spacing-xl);
-    font-size: var(--font-size-base);
+.photographer-infos {
+  justify-self: center;
+  align-self: center;
 }
-.photographers__price__pages{
-    margin: var(--spacing-base) 0 0 var(--spacing-xl);
+.photographer__name-page {
+  margin: 0;
+  font-size: 2rem;
+  text-align: initial;
 }
-.button-contact{
-    height: var(--spacing-xxl);
-    margin-top: var(--spacing-base);
-    background-color: var(--color-primary);
-    border: none;
-    border-radius: 5px;
-    color: white;
+.photographer__img-page {
+  justify-self: end;
+  margin-right: 3rem;
+  align-self: center;
 }
-.photographers__img__pages{
-    width: 35%;
-    align-self: center;
+.photographers__price__pages {
+  margin: var(--spacing-base) 0 0 var(--spacing-xl);
 }
-.header-logo__pages{
-    margin: var(--spacing-base) 0 var(--spacing-xl) var(--spacing-xxl);
+.button-contact {
+  height: var(--spacing-xxl);
+  margin-top: var(--spacing-base);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 5px;
+  color: white;
 }
-.block-photos{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
-    justify-content: center;
+.photographers__img__pages {
+  width: 35%;
+  align-self: center;
 }
-.photo-list{
-    width: var(--width-photo);
-    height: var(--height-photo);
-    object-fit: cover;
+.header-logo__pages {
+  margin: var(--spacing-base) 0 var(--spacing-xl) var(--spacing-xxl);
+}
+.block-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+}
+.photo-list {
+  width: var(--width-photo);
+  height: var(--height-photo);
+  object-fit: cover;
 }
