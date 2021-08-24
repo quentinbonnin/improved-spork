@@ -44,3 +44,49 @@ const getPhotographer = async (id) => {
 
   displayPhotographer(photographer);
 })();
+
+//Example of media
+// "media": [
+//   {
+//     "id": 342550,
+//     "photographerId": 82,
+//     "title": "Fashion Yellow Beach",
+//     "image": "Fashion_Yellow_Beach.jpg",
+//     "tags": ["fashion"],
+//     "likes": 62,
+//     "date": "2011-12-08",
+//     "price": 55
+//   },
+
+const photographerImagesTemplate = (elements) => {
+  return `
+   <div data-id=${elements.id}>
+   <img src="/Sample Photos/Tracy/${
+     (elements.image, elements.vidéo, elements)
+   }">
+   <p>${elements.date}</p>
+   </div>
+  `;
+};
+
+const displayPhotographerImages = (media) => {
+  const photographerPagesImages = document.querySelector(
+    "#photographer-images"
+  );
+
+  photographerPagesImages.innerHTML = media
+    .map(photographerImagesTemplate)
+    .join(" ");
+};
+
+const getMedia = async () => {
+  const response = await fetch("../FishEyeData.json");
+
+  return (await response.json()).media;
+};
+
+(async () => {
+  const media = await getMedia();
+
+  displayPhotographerImages(media);
+})();
