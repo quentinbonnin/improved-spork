@@ -1,10 +1,10 @@
-const photographersPagesTemplate = (photographer) => {
+const photographerTemplate = (photographer) => {
   return `
     <div class="block-photographer">
     <div class="photographer-infos">
-        <h1 class="photographer__name photographer__name-page">${
-          photographer.name
-        }</h1>
+      <h1 class="photographer__name photographer__name-page">${
+        photographer.name
+      }</h1>
         <h2 class="photographer__city">${photographer.city},${
     photographer.country
   }</h2>
@@ -22,24 +22,25 @@ const photographersPagesTemplate = (photographer) => {
     `;
 };
 
-const displayPhotographerPage = (photographers) => {
+const displayPhotographer = (photographer) => {
   const photographerPagesElement = document.querySelector("#photographer-page");
 
-  photographerPagesElement.innerHTML = photographers
-    .map(photographersPagesTemplate)
-    .join("");
+  photographerPagesElement.innerHTML = photographerTemplate(photographer);
 };
 
-const getPhotographers = async () => {
+const getPhotographer = async (id) => {
   const response = await fetch("../FishEyeData.json");
 
-  return (await response.json()).photographers;
+  const { photographers } = await response.json();
+
+  return photographers.find((photographer) => String(photographer.id) === id);
 };
 
 (async () => {
-  const photographers = await getPhotographers();
+  const url = new URL(window.location.href);
+  const photographerId = url.searchParams.get("id");
 
-  displayPhotographerPage(photographers);
+  const photographer = await getPhotographer(photographerId);
+
+  displayPhotographer(photographer);
 })();
-
-const id = window.location.search.split("id=")[1];
