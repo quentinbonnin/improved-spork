@@ -58,15 +58,18 @@ const getPhotographer = async (id) => {
 //     "price": 55
 //   },
 
-const photographerImagesTemplate = (elements) => {
+const photographerImagesTemplate = (element) => {
   return `
-   <div data-id=${elements.id}>
-   <img src="/Sample Photos/Tracy/${
-     (elements.image, elements.vidéo, elements)
-   }">
-   <p>${elements.date}</p>
-   </div>
-  `;
+    <div class="photographer-work" data-id="${element.photographerId}">
+      <img class="photographer-work__photos" src="/images/${element.photographerId}/${element.image}">
+      <div class="photographer-work__description">
+        <p class="photographer-work__title">${element.title}</p>
+        <p class="photographer-work__likes">${element.likes}</p>
+        <i class="photographer-work__heart fas fa-heart"></i>
+      </div>
+    </div>
+    
+   `;
 };
 
 const displayPhotographerImages = (media) => {

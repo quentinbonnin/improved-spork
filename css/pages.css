@@ -52,9 +52,36 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   justify-content: center;
+  margin-top: 5rem;
 }
 .photo-list {
   width: var(--width-photo);
   height: var(--height-photo);
   object-fit: cover;
+}
+.photographer-work {
+  justify-self: center;
+}
+.photographer-work__photos {
+  width: 24rem;
+  height: 30rem;
+  object-fit: cover;
+  border-radius: 0.3rem;
+}
+.photographer-work__description {
+  display: grid;
+  grid-template-columns: 1fr 0.1fr 0.1fr;
+}
+.photographer-work__heart {
+  align-self: center;
+  color: #911c1c;
+}
+.photographer-work__likes {
+  color: #911c1c;
+}
+.photographer-work__title {
+  color: #911c1c;
+}
+.sortby {
+  margin: 5rem 0 0 3rem;
 }
