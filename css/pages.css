@@ -1,19 +1,19 @@
 .block-photographer {
   display: grid;
   grid-template-columns: 1fr 0.5fr 1.5fr;
-  background-color: #fafafa;
-  width: 75%;
-  height: 17rem;
+  background-color: var(--light-grey);
+  width: var(--width-xl);
+  height: var(--height-block-photographer);
   margin: auto;
 }
 .photographer__contact {
-  height: 4rem;
+  height: var(--spacing-large);
   color: white;
-  background-color: #911c1c;
+  background-color: var(--color-photographer);
   border: none;
   border-radius: 5px;
   width: 10rem;
-  margin-top: 3rem;
+  margin-top: var(--spacing-xxl);
 }
 .photographer-infos {
   justify-self: center;
@@ -21,12 +21,12 @@
 }
 .photographer__name-page {
   margin: 0;
-  font-size: 2rem;
+  font-size: var(--font-size-large);
   text-align: initial;
 }
 .photographer__img-page {
   justify-self: end;
-  margin-right: 3rem;
+  margin-right: var(--spacing-xxl);
   align-self: center;
 }
 .photographers__price__pages {
@@ -41,7 +41,7 @@
   color: white;
 }
 .photographers__img__pages {
-  width: 35%;
+  width: var(--width-photographer-block);
   align-self: center;
 }
 .header-logo__pages {
@@ -52,7 +52,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: var(--margin-top-photographers);
 }
 .photo-list {
   width: var(--width-photo);
@@ -63,10 +63,10 @@
   justify-self: center;
 }
 .photographer-work__photos {
-  width: 24rem;
-  height: 30rem;
+  width: var(--width-photographer-img);
+  height: var(--height-photographer-img);
   object-fit: cover;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius-photographer-img);
 }
 .photographer-work__description {
   display: grid;
@@ -74,14 +74,13 @@
 }
 .photographer-work__heart {
   align-self: center;
-  color: #911c1c;
 }
 .photographer-work__likes {
-  color: #911c1c;
+  color: var(--color-photographer);
 }
 .photographer-work__title {
-  color: #911c1c;
+  color: var(--color-photographer);
 }
 .sortby {
-  margin: 5rem 0 0 3rem;
+  margin: var(--margin-top-photographers) 0 0 var(--spacing-xxl);
 }

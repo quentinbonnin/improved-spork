@@ -65,7 +65,7 @@ const photographerImagesTemplate = (element) => {
       <div class="photographer-work__description">
         <p class="photographer-work__title">${element.title}</p>
         <p class="photographer-work__likes">${element.likes}</p>
-        <i class="photographer-work__heart fas fa-heart"></i>
+        <i class="photographer-work__heart far fa-heart"></i>
       </div>
     </div>
     
@@ -93,3 +93,9 @@ const getMedia = async () => {
 
   displayPhotographerImages(media);
 })();
+
+// Likes
+
+const HeartIcon = document.querySelector(".photographer-work__heart");
+
+HeartIcon.addEventListener("click", () => {});

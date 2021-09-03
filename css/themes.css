@@ -3,15 +3,25 @@
   --spacing-base: 1rem;
   --spacing-xl: 2rem;
   --spacing-xxl: 3rem;
+  --spacing-large: 4rem;
   --border-base: solid 1px #c4c4c4;
   --color-primary: #901c1c;
   --color-secondary: #d3573c;
   --light-grey: #fafafa;
   --light-dark: #757575;
+  --color-photographer: #911c1c;
   --font-size-base: 1rem;
+  --font-size-medium: 1.5rem;
   --font-size-large: 2rem;
   --border-radius-photos: 7rem;
   --margin-top-photographers: 5rem;
   --width-photo: 35rem;
   --height-photo: 35rem;
+  --width-xl: 75%;
+  --height-block-photographer: 17rem;
+  --width-photographer-img: 24rem;
+  --height-photographer-img: 30rem;
+  --border-radius-photographer-img: 0.3rem;
+  --width-photographer-block: 35%;
+  --border-radius-base: 2rem;
 }

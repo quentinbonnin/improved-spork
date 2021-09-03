@@ -9,8 +9,8 @@
 }
 .header__tag {
   display: flex;
-  padding: 0.5rem 0.5rem;
-  margin-right: 0.5rem;
+  padding: var(--spacing-xs) var(--spacing-xs);
+  margin-right: var(--spacing-xs);
 }
 .header-logo {
   height: var(--spacing-xxl);

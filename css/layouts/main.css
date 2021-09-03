@@ -16,7 +16,7 @@
 .photographer__name {
   text-align: center;
   color: var(--color-secondary);
-  font-size: 1.5rem;
+  font-size: var(--font-size-medium);
   margin: var(--spacing-xs) 0 var(--spacing-xs) 0;
   font-family: "DM sans", sans-serif;
 }
@@ -42,7 +42,7 @@
 .tag {
   background-color: transparent;
   border: var(--border-base);
-  border-radius: 2rem;
+  border-radius: var(--border-radius-base);
   color: var(--color-primary);
 }
 .nav-list__main {
