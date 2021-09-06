@@ -17,7 +17,7 @@ const photographersTemplate = (photographer) => {
       <div class="photographer-container">
         <a class="photographer__link" href="/pages/photographer.html?id=${
           photographer.id
-        }">
+        }&photographerId=${photographer.id}">
           <img class="photographer__img" src="/Home-img/${
             photographer.portrait
           }" alt="${photographer.name}">

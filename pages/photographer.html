@@ -23,13 +23,15 @@
     <main>
       <div class="sortby">
         <span class="sortby-text">Trier par</span>
-        <select name="" id="" class="sortby-button">
-          <form action="">
-            <option value="" class="sortby-options">Popularité</option>
-            <option value="" class="sortby-options">Date</option>
-            <option value="" class="sortby-options">Titre</option>
-          </form>
-        </select>
+        <div class="dropdown">
+          <button class="dropdown-button">
+            popularité<i id="dropdow-icon" class="fas fa-angle-down"></i>
+          </button>
+        </div>
+        <div id="dropdown-open" class="dropdown-open">
+          <a class="dropdown-open__link" href="#">Date</a>
+          <a class="dropdown-open__link" href="#">Titre</a>
+        </div>
       </div>
       <div class="block-photos" id="photographer-images"></div>
     </main>

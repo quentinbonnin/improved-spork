@@ -47,7 +47,7 @@ const getPhotographer = async (id) => {
 
 //Example of media
 // "media": [
-//   {
+//   {v
 //     "id": 342550,
 //     "photographerId": 82,
 //     "title": "Fashion Yellow Beach",
@@ -57,10 +57,9 @@ const getPhotographer = async (id) => {
 //     "date": "2011-12-08",
 //     "price": 55
 //   },
-
 const photographerImagesTemplate = (element) => {
   return `
-    <div class="photographer-work" data-id="${element.photographerId}">
+    <div class="photographer-work">
       <img class="photographer-work__photos" src="/images/${element.photographerId}/${element.image}">
       <div class="photographer-work__description">
         <p class="photographer-work__title">${element.title}</p>
@@ -77,25 +76,30 @@ const displayPhotographerImages = (media) => {
     "#photographer-images"
   );
 
-  photographerPagesImages.innerHTML = media
-    .map(photographerImagesTemplate)
-    .join(" ");
+  photographerPagesImages.innerHTML = photographerImagesTemplate(media);
 };
 
-const getMedia = async () => {
+const getMedia = async (photographerId) => {
   const response = await fetch("../FishEyeData.json");
-
-  return (await response.json()).media;
+  const { media } = await response.json();
+  return media.find(
+    (element) => String(element.photographerId) === photographerId
+  );
 };
 
 (async () => {
-  const media = await getMedia();
+  const url = new URL(window.location.href);
+  const photographerPage = url.searchParams.get("photographerId");
+  const media = await getMedia(photographerPage);
 
   displayPhotographerImages(media);
 })();
 
-// Likes
+// button dropdown
 
-const HeartIcon = document.querySelector(".photographer-work__heart");
+const dropdownButton = document.querySelector(".dropdown-button");
+const dropdownOpen = document.querySelector("#dropdown-open");
 
-HeartIcon.addEventListener("click", () => {});
+dropdownButton.addEventListener("click", function () {
+  dropdownOpen.style.display = "block";
+});
