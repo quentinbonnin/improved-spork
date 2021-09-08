@@ -60,7 +60,9 @@ const getPhotographer = async (id) => {
 const photographerImagesTemplate = (element) => {
   return `
     <div class="photographer-work">
-      <img class="photographer-work__photos" src="/images/${element.photographerId}/${element.image}">
+      <div>
+        ${videoOrimage(element.image, element.video, element)}
+      </div>
       <div class="photographer-work__description">
         <p class="photographer-work__title">${element.title}</p>
         <p class="photographer-work__likes">${element.likes}</p>
@@ -95,11 +97,19 @@ const getMedia = async (photographerId) => {
   displayPhotographerImages(media);
 })();
 
+function videoOrimage(image, video, element) {
+  if ("image" in element) {
+    return `<img class="photographer-work__photos" src ="/images/${element.photographerId}/${element.image}" alt="${element.name}">`;
+  } else if ("video" in element) {
+    return `<iframe src="/images/${element.photographerId}/${element.video}"></iframe>`;
+  }
+}
+
 // button dropdown
 
 const dropdownButton = document.querySelector(".dropdown-button");
 const dropdownOpen = document.querySelector("#dropdown-open");
 
 dropdownButton.addEventListener("click", function () {
-  dropdownOpen.style.display = "block";
+  dropdownOpen.style.display = "flex";
 });
