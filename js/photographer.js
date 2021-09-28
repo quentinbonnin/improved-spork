@@ -57,7 +57,7 @@ const getPhotographer = async (id) => {
 //     "date": "2011-12-08",
 //     "price": 55
 //   },
-const photographerImagesTemplate = (element) => {
+const getMediaTemplate = (element) => {
   return `
     <div class="photographer-work">
       <div>
@@ -73,18 +73,18 @@ const photographerImagesTemplate = (element) => {
    `;
 };
 
-const displayPhotographerImages = (media) => {
+const displayMedias = (medias) => {
   const photographerPagesImages = document.querySelector(
     "#photographer-images"
   );
 
-  photographerPagesImages.innerHTML = photographerImagesTemplate(media);
+  photographerPagesImages.innerHTML = medias.map(getMediaTemplate).join("");
 };
 
 const getMedia = async (photographerId) => {
   const response = await fetch("../FishEyeData.json");
   const { media } = await response.json();
-  return media.find(
+  return media.filter(
     (element) => String(element.photographerId) === photographerId
   );
 };
@@ -94,7 +94,7 @@ const getMedia = async (photographerId) => {
   const photographerPage = url.searchParams.get("photographerId");
   const media = await getMedia(photographerPage);
 
-  displayPhotographerImages(media);
+  displayMedias(media);
 })();
 
 function videoOrimage(image, video, element) {
@@ -113,3 +113,16 @@ const dropdownOpen = document.querySelector("#dropdown-open");
 dropdownButton.addEventListener("click", function () {
   dropdownOpen.style.display = "flex";
 });
+
+
+// modal
+
+const modalbg = document.querySelector(".bground");
+const modalbtn = document.querySelector(".photographer__contact");
+
+
+modalbtn.addEventListener("click", launchModal);
+
+function launchModal(){
+  modalbg.style.display = "block";
+};

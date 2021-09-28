@@ -19,6 +19,19 @@
         alt="Fisheye logo"
       />
       <div id="photographer-page"></div>
+      <div class="bground">
+        <div class="content">
+          <span class="close"></span>
+          <div class="modal-body">
+            <form
+              name="reserve"
+              action="photographer.html"
+              method="get"
+              onsubmit="return validate();"
+            ></form>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
       <div class="sortby">
@@ -35,6 +48,6 @@
       </div>
       <div class="block-photos" id="photographer-images"></div>
     </main>
-    <script src="../js/photographer.js"></script>
+    <script type="module" src="../js/photographer/index.js"></script>
   </body>
 </html>
