@@ -1,5 +1,5 @@
 import { displayProfile } from "./profile.js";
-import { displayMedias } from "./medias.js";
+import { displayMedias, displayTotalLikes, getTotalLikes } from "./medias.js";
 
 const getPhotographer = async (id) => {
   const response = await fetch("../FishEyeData.json");
@@ -25,6 +25,9 @@ const getMedias = async (photographerId) => {
   const photographer = await getPhotographer(photographerId);
   const medias = await getMedias(photographerId);
 
+  const likes = getTotalLikes(medias);
+
   displayProfile(photographer);
   displayMedias(medias);
+  displayTotalLikes(likes);
 })();

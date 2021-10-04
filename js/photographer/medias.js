@@ -20,7 +20,6 @@ const getMediaTemplate = (element) => {
           <i class="photographer-work__heart fas fa-heart"></i>
         </div>
       </div>
-      
      `;
 };
 
@@ -29,10 +28,35 @@ export const displayMedias = (medias) => {
     "#photographer-images"
   );
 
+  const incrementLike = ({ id, likes }) => {
+    const mediasWithUpdatedLikes = medias.map((element) =>
+      element.id === id ? { ...element, likes: likes + 1 } : element
+    );
+    const totalLikes = getTotalLikes(mediasWithUpdatedLikes);
+
+    displayMedias(mediasWithUpdatedLikes);
+    displayTotalLikes(totalLikes);
+  };
+
   photographerPagesImages.innerHTML = medias.map(getMediaTemplate).join("");
+  document
+    .querySelectorAll(".photographer-work__heart")
+    .forEach(
+      (element, index) => (element.onclick = () => incrementLike(medias[index]))
+    );
 };
 
-// logic of filters should be there, think about re-calling displayMedias on a specified event (addEventListerner onchange or click, you choose) add parameters such as orderBy, order etc... ie: order likes, orderBy ASC || DESC
+export const displayTotalLikes = (likes) => {
+  if (document.querySelector("#total-likes")) {
+    return (document.querySelector("#total-likes").innerHTML = likes);
+  }
 
-// 1) get the number of total likes (reduce) [1, 2 ,3 ,4].reduce((acc, cur) => acc + cur, 0)
-// 2) add an event when an user click on ,likes to increment the value of a specified likes and the total likes by calling again the displayMedias with the new likes values on a specified media
+  const likesElement = document.createElement("div");
+  likesElement.innerHTML = `<p id="total-likes">${likes}</p>`;
+
+  document.body.append(likesElement);
+};
+
+export const getTotalLikes = (medias) => {
+  return medias.reduce((likes, media) => likes + media.likes, 0);
+};
