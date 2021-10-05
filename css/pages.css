@@ -112,6 +112,16 @@
   color: white;
 }
 
-.heart-color {
-  color: red;
+.element__likes {
+  bottom: 1rem;
+  position: fixed;
+  right: 3rem;
+  display: flex;
+  justify-content: space-around;
+  background: #db8876;
+  width: 15rem;
+}
+
+.total-heart {
+  display: flex;
 }

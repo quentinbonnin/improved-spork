@@ -5,7 +5,7 @@ const getMediaTemplate = (element) => {
     }
 
     if (video) {
-      return `<iframe src="/images/${photographerId}/${video}"></iframe>`;
+      return `<iframe width="380px" height="480px" src="/images/${photographerId}/${video}"></iframe>`;
     }
   };
 
@@ -46,13 +46,20 @@ export const displayMedias = (medias) => {
     );
 };
 
-export const displayTotalLikes = (likes) => {
+export const displayTotalLikes = (likes, price) => {
   if (document.querySelector("#total-likes")) {
     return (document.querySelector("#total-likes").innerHTML = likes);
   }
+  if (document.querySelector("#total-price")) {
+    return (document.querySelector("#total-price").innerHTML = price);
+  }
 
   const likesElement = document.createElement("div");
-  likesElement.innerHTML = `<p id="total-likes">${likes}</p>`;
+  likesElement.innerHTML = `<div class="element__likes">
+                            <p id="total-likes">${likes}</p>
+                            <i class="total-heart fas fa-heart"></i>
+                            <p id="total-price">${price}/jours</p>
+                            </div>`;
 
   document.body.append(likesElement);
 };
