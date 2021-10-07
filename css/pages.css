@@ -125,3 +125,11 @@
 .total-heart {
   display: flex;
 }
+
+.zoom-photos {
+  position: fixed;
+  left: 43%;
+  top: 50%;
+  width: 35rem;
+  height: 40rem;
+}

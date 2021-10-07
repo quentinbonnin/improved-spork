@@ -5,7 +5,7 @@ const getMediaTemplate = (element) => {
     }
 
     if (video) {
-      return `<iframe width="380px" height="480px" src="/images/${photographerId}/${video}"></iframe>`;
+      return `<iframe class="photographer-work__videos" width="380px" height="480px" src="/images/${photographerId}/${video}"></iframe>`;
     }
   };
 
@@ -22,6 +22,13 @@ const getMediaTemplate = (element) => {
       </div>
      `;
 };
+
+export const getCarouselTemplate = (photographerId , name , image) => {
+  return `
+            <img class="carousel__photos" src="/images/${photographerId}/${image}">
+         
+          `;
+}
 
 export const displayMedias = (medias) => {
   const photographerPagesImages = document.querySelector(
@@ -44,6 +51,16 @@ export const displayMedias = (medias) => {
     .forEach(
       (element, index) => (element.onclick = () => incrementLike(medias[index]))
     );
+  document
+      .querySelectorAll('.photographer-work__photos')
+      .forEach(
+        (images) => (images.onclick = () =>  images.classList.add('zoom-photos')))
+  document
+      .querySelectorAll('.photographer-work__videos')
+      .forEach(
+        (element) => (element.onclick = () => element.classList.toggle('zoom-photos')
+      ))
+
 };
 
 export const displayTotalLikes = (likes, price) => {
@@ -54,12 +71,13 @@ export const displayTotalLikes = (likes, price) => {
     return (document.querySelector("#total-price").innerHTML = price);
   }
 
-  const likesElement = document.createElement("div");
-  likesElement.innerHTML = `<div class="element__likes">
+  const likesElement = document.createElement("div")
+  likesElement.className = 'element__likes';
+  likesElement.innerHTML = `
                             <p id="total-likes">${likes}</p>
                             <i class="total-heart fas fa-heart"></i>
                             <p id="total-price">${price}/jours</p>
-                            </div>`;
+                            `;
 
   document.body.append(likesElement);
 };
@@ -67,3 +85,11 @@ export const displayTotalLikes = (likes, price) => {
 export const getTotalLikes = (medias) => {
   return medias.reduce((likes, media) => likes + media.likes, 0);
 };
+
+export const displayCarousel = (medias) => {
+
+  const photographerCarousel = document.querySelector('#carousel');
+
+  photographerCarousel.innerHTML = [medias].map(getCarouselTemplate).join(""); 
+
+}
