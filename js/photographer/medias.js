@@ -23,9 +23,11 @@ const getMediaTemplate = (element) => {
      `;
 };
 
-export const getCarouselTemplate = (photographerId , name , image) => {
+export const getCarouselTemplate = ({photographerId , image}) => {
   return `
+            <i class="fas fa-chevron-circle-left"></i>
             <img class="carousel__photos" src="/images/${photographerId}/${image}">
+            <i class="fas fa-chevron-circle-right"></i>
          
           `;
 }
@@ -91,5 +93,4 @@ export const displayCarousel = (medias) => {
   const photographerCarousel = document.querySelector('#carousel');
 
   photographerCarousel.innerHTML = [medias].map(getCarouselTemplate).join(""); 
-
 }

@@ -133,3 +133,8 @@
   width: 35rem;
   height: 40rem;
 }
+
+.carousel__photos {
+  width: 2rem;
+  height: 5rem;
+}

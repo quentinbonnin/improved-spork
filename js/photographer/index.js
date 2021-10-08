@@ -20,13 +20,15 @@ const getMedias = async (photographerId) => {
 
 
 
+
+
 (async () => {
   const url = new URL(window.location.href);
   const photographerId = url.searchParams.get("id");
 
   const photographer = await getPhotographer(photographerId);
   const medias = await getMedias(photographerId);
-  const photos = getCarouselTemplate(photographerId);
+  const photos =  getCarouselTemplate(photographerId);
   const likes = getTotalLikes(medias);
 
   displayProfile(photographer);
