@@ -124,6 +124,7 @@
 
 .total-heart {
   display: flex;
+  align-self: center;
 }
 
 .zoom-photos {
@@ -137,4 +138,8 @@
 .carousel__photos {
   width: 2rem;
   height: 5rem;
+}
+
+.photographer__contact {
+  display: none;
 }

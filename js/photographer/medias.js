@@ -94,3 +94,5 @@ export const displayCarousel = (medias) => {
 
   photographerCarousel.innerHTML = [medias].map(getCarouselTemplate).join(""); 
 }
+
+

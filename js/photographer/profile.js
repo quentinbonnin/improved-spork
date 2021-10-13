@@ -29,3 +29,15 @@ export const displayProfile = (photographer) => {
 
   photographerPagesElement.innerHTML = getProfileTemplate(photographer);
 };
+
+const modalBg = 
+document
+      .querySelector(".bground")
+      .forEach(
+        (element) => (element.onclick = () => element.style.display = "block") 
+        );
+const modalBtn = document.querySelector(".photographer__contact")
+
+
+
+
