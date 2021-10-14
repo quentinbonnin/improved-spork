@@ -30,13 +30,17 @@ export const displayProfile = (photographer) => {
   photographerPagesElement.innerHTML = getProfileTemplate(photographer);
 };
 
-const modalBg = 
-document
-      .querySelector(".bground")
-      .forEach(
-        (element) => (element.onclick = () => element.style.display = "block") 
-        );
-const modalBtn = document.querySelector(".photographer__contact")
+
+export const Modal = () => {
+  const contactButton = document.querySelector('.photographer__contact');
+  const formModal = document.querySelector('.modal-body');
+
+
+  contactButton.addEventListener('click' , () => {
+    formModal.style.display = 'flex';
+  })
+
+}
 
 
 

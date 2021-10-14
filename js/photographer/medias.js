@@ -23,7 +23,7 @@ const getMediaTemplate = (element) => {
      `;
 };
 
-export const getCarouselTemplate = ({photographerId , image}) => {
+export const getCarouselTemplate = ([photographerId , image]) => {
   return `
             <i class="fas fa-chevron-circle-left"></i>
             <img class="carousel__photos" src="/images/${photographerId}/${image}">

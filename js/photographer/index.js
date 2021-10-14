@@ -1,4 +1,4 @@
-import { displayProfile } from "./profile.js";
+import { displayProfile, Modal } from "./profile.js";
 import { displayMedias, displayTotalLikes, getTotalLikes, displayCarousel, getCarouselTemplate} from "./medias.js";
 
 const getPhotographer = async (id) => {
@@ -25,6 +25,7 @@ const getMedias = async (photographerId) => {
 (async () => {
   const url = new URL(window.location.href);
   const photographerId = url.searchParams.get("id");
+  
 
   const photographer = await getPhotographer(photographerId);
   const medias = await getMedias(photographerId);
@@ -35,4 +36,5 @@ const getMedias = async (photographerId) => {
   displayMedias(medias);
   displayTotalLikes(likes);
   displayCarousel(photos);
+  Modal();
 })();
