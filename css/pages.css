@@ -141,5 +141,31 @@
 }
 
 .modal-body {
+  align-items: center;
+  justify-content: center;
   display: none;
+  position: fixed;
+  bottom: 25%;
+  width: 25%;
+  height: 50%;
+  left: 40rem;
+  background: #db8876;
+}
+
+.text-message {
+  height: 4rem;
+}
+
+input {
+  width: 15rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.Modal-button {
+  padding: 0.5rem;
+  background-color: #901c1c;
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
 }

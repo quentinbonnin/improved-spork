@@ -1,3 +1,5 @@
+import { toggle as toggleModal } from "./contactModal.js";
+
 const getProfileTemplate = ({
   name,
   city,
@@ -28,20 +30,8 @@ export const displayProfile = (photographer) => {
   const photographerPagesElement = document.querySelector("#photographer-page");
 
   photographerPagesElement.innerHTML = getProfileTemplate(photographer);
+
+  document
+    .querySelector(".photographer__contact")
+    .addEventListener("click", toggleModal);
 };
-
-
-export const Modal = () => {
-  const contactButton = document.querySelector('.photographer__contact');
-  const formModal = document.querySelector('.modal-body');
-
-
-  contactButton.addEventListener('click' , () => {
-    formModal.style.display = 'flex';
-  })
-
-}
-
-
-
-

@@ -23,14 +23,14 @@ const getMediaTemplate = (element) => {
      `;
 };
 
-export const getCarouselTemplate = ([photographerId , image]) => {
+export const getCarouselTemplate = ([photographerId, image]) => {
   return `
             <i class="fas fa-chevron-circle-left"></i>
             <img class="carousel__photos" src="/images/${photographerId}/${image}">
             <i class="fas fa-chevron-circle-right"></i>
          
           `;
-}
+};
 
 export const displayMedias = (medias) => {
   const photographerPagesImages = document.querySelector(
@@ -54,15 +54,16 @@ export const displayMedias = (medias) => {
       (element, index) => (element.onclick = () => incrementLike(medias[index]))
     );
   document
-      .querySelectorAll('.photographer-work__photos')
-      .forEach(
-        (images) => (images.onclick = () =>  images.classList.add('zoom-photos')))
+    .querySelectorAll(".photographer-work__photos")
+    .forEach(
+      (images) => (images.onclick = () => images.classList.add("zoom-photos"))
+    );
   document
-      .querySelectorAll('.photographer-work__videos')
-      .forEach(
-        (element) => (element.onclick = () => element.classList.toggle('zoom-photos')
-      ))
-
+    .querySelectorAll(".photographer-work__videos")
+    .forEach(
+      (element) =>
+        (element.onclick = () => element.classList.toggle("zoom-photos"))
+    );
 };
 
 export const displayTotalLikes = (likes, price) => {
@@ -73,8 +74,8 @@ export const displayTotalLikes = (likes, price) => {
     return (document.querySelector("#total-price").innerHTML = price);
   }
 
-  const likesElement = document.createElement("div")
-  likesElement.className = 'element__likes';
+  const likesElement = document.createElement("div");
+  likesElement.className = "element__likes";
   likesElement.innerHTML = `
                             <p id="total-likes">${likes}</p>
                             <i class="total-heart fas fa-heart"></i>
@@ -89,10 +90,7 @@ export const getTotalLikes = (medias) => {
 };
 
 export const displayCarousel = (medias) => {
+  const photographerCarousel = document.querySelector("#carousel");
 
-  const photographerCarousel = document.querySelector('#carousel');
-
-  photographerCarousel.innerHTML = [medias].map(getCarouselTemplate).join(""); 
-}
-
-
+  photographerCarousel.innerHTML = medias.map(getCarouselTemplate).join("");
+};
