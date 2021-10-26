@@ -95,7 +95,11 @@
   color: white;
   background-color: #901c1c;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .dropdown-open {
   display: flex;
   flex-direction: column;
@@ -110,6 +114,9 @@
   width: 10rem;
   text-align: center;
   color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .element__likes {
@@ -141,8 +148,7 @@
 }
 
 .modal-body {
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   display: none;
   position: fixed;
   bottom: 25%;
@@ -168,4 +174,56 @@ input {
   color: white;
   border: none;
   border-radius: 0.2rem;
+}
+
+#Errorfirstname {
+  display: none;
+}
+
+#Errorlastname {
+  display: none;
+}
+
+#error-mail {
+  display: none;
+}
+
+.is-visible {
+  display: flex;
+}
+
+.formData {
+  margin-left: 2rem;
+}
+
+.contact-photographer {
+  display: flex;
+  margin-left: 2rem;
+  font-size: 2rem;
+}
+
+#message {
+  height: 6rem;
+  width: 20rem;
+}
+
+.text-control {
+  width: 20rem;
+}
+
+.btn-submit {
+  height: 3rem;
+  width: 8rem;
+  margin-left: 2rem;
+  color: white;
+  background-color: #911c1c;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact-cross {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: white;
 }
