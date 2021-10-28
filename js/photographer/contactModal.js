@@ -4,18 +4,18 @@ export const modalTemplate = (name) => {
   return `
   <div>
     <p class="contact-photographer">Contactez-moi ${name}</p>
+    
     <i class="fas fa-times contact-cross"></i>
   </div>
     
     <form
       class="modal"
       name="reserve"
-      action="index.html"
       method="get"
       onsubmit="return checkValidity();"
       >
      
-    </form>
+   
     <div
       class="formData">
       <label>Prénom</label><br>
@@ -25,7 +25,7 @@ export const modalTemplate = (name) => {
          id="first"
          name="first"
          /><br>
-        <span id="Errorfirstname">Veuillez entrer 2 caractères ou plus pour le champ du Prénom.</span>
+        <span id="errorfirstname">Veuillez entrer 2 caractères ou plus pour le champ du Prénom.</span>
    </div>
    <div class="formData">
       <label>Nom</label><br>
@@ -35,7 +35,7 @@ export const modalTemplate = (name) => {
         id="last"
         name="last"
         /><br>
-        <span id="Errorlastname">Veuillez entrer 2 caractères ou plus pour le champ du Nom.</span>
+        <span id="errorlastname">Veuillez entrer 2 caractères ou plus pour le champ du Nom.</span>
   </div>
   <div class="formData">
       <label>E-mail</label><br>
@@ -55,14 +55,15 @@ export const modalTemplate = (name) => {
          id="message"
          name="message"
         /><br>
-        <span id="error-mail">Vous devez entrer une adresse mail valide.</span>
   </div>
   <input
+      
       class="btn-submit"
       type="submit"
       class="button"
       value="Envoyer"
     />
+  </form>
     
   `;
 };
@@ -75,52 +76,66 @@ export const displayModal = (photographers) => {
   crossModal.addEventListener("click", () => {
     form.style.display = "none";
   });
+  console.log(photographers.name)
 };
+// const submitDefault = document.querySelector(".modal");
+// submitDefault.addEventListener('submit' , function(submitEvent) {
+//   submitEvent.preventdefault();
+//   submitEvent.addEventListener('submit' , checkValidity)
+// })
 
 export const checkValidity = (e) => {
-  // console.log("super la vie de checkvalidity");
+   console.log("super la vie de checkvalidity");
   // console.log(e);
   // // check is from is valid
   // // return true or false
-  // let isValid = true;
-  // const firstName = document.getElementById("first").value;
-  // const lastName = document.getElementById("last").value;
-  // const email = document.getElementById("email").value;
-  // const errorfirstname = document.getElementById("Errorfirstname");
-  // const submitDefault = document.querySelector(".btn-submit");
-  // submitDefault.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  // });
-  // if ((firstName = "" || firstName.length < 2)) {
-  //   displayErrors(errorfirstname);
-  //   isValid;
-  // } else {
-  //   hideErrors(errorfirstname);
-  // }
-  // if ((lastName = "" || lastName.length < 2)) {
-  //   displayErrors();
-  //   isValid = false;
-  // } else {
-  //   hideErrors();
-  // }
-  // if (/^([a-z]\.?)+@([a-z]+\.)+[a-z]+$/.test(email) == false) {
-  //   displayErrors();
-  //   isValid = false;
-  // } else {
-  //   hideErrors();
-  // }
-  // console.log("super");
-  // // return isValid;
-  // return false;
+  let isValid = false;
+  let firstName = document.getElementById("first").value;
+  let lastName = document.getElementById("last").value;
+  let email = document.getElementById("email").value;
+  let errorfirstname = document.getElementById("errorfirstname");
+  let errorLastName = document.getElementById("errorlastname")
+  let errorEmail = document.getElementById("error-mail")
+  let submitDefault = document.querySelector('form');
+  
+  
+  submitDefault;addEventListener('submit' , function(event) {
+    event.preventDefault();
+  })
+
+  if ((firstName = "" || firstName.length < 2)) {
+    isValid
+    displayErrors(errorfirstname);
+    
+  } else {
+    hideErrors(errorfirstname);
+  }
+  if ((lastName = "" || lastName.length < 2)) {
+    isValid
+    displayErrors(errorLastName);
+    
+  } else {
+    hideErrors(errorLastName);
+  }
+  if (/^([a-z]\.?)+@([a-z]+\.)+[a-z]+$/.test(email) == false) {
+    isValid
+     displayErrors(errorEmail);
+   
+  } else {
+    hideErrors(errorEmail);
+  }
+    return isValid = true;
+  
 };
 
-export const displayErrors = (element) => {
+
+ export const displayErrors = (element) => {
   element.style.display = "block";
   element.style.color = "red";
   element.style.fontSize = "1rem";
 };
 
-export const hideErrors = (element) => {
+ export const hideErrors = (element) => {
   element.style.display = "none";
 };
 

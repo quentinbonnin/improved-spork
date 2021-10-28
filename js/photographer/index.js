@@ -6,25 +6,32 @@ import {
   // displayCarousel,
   // getCarouselTemplate,
 } from "./medias.js";
-import { displayModal, modalTemplate, checkValidity } from "./contactModal.js";
+import { displayModal, modalTemplate, checkValidity,  } from "./contactModal.js";
 
-const getPhotographer = async (id) => {
+const getPhotographer = async (id , name) => {
   const response = await fetch("../FishEyeData.json");
 
   const { photographers } = await response.json();
 
-  return photographers.find((photographer) => String(photographer.id) === id);
+  return photographers
+  .find((photographer) => String(photographer.id) === id)
 };
 
-let filter = "title"; // dates or likes
+let filter = "likes"; // dates or likes
 
 const displayFilters = () => {
   const dropdownButton = document.querySelector(".dropdown-button");
   const dropdownOpen = document.querySelector("#dropdown-open");
-
+  const linkTitle = document.querySelector(".link-title")
   dropdownButton.addEventListener("click", () => {
     dropdownOpen.classList.toggle("is-visible");
   });
+
+  linkTitle.addEventListener("click" , () => {
+    getMedias(photographerId)
+  })
+
+
   // onclick I should see my options
   // onclick one of my options :
   // 1 set a variable about filters 2 (bonus) set a query parameter from url assign to this filter
@@ -42,9 +49,9 @@ const getMedias = async (photographerId) => {
 const loadPage = async () => {
   const url = new URL(window.location.href);
   const photographerId = url.searchParams.get("id");
-  // const form = document.querySelector(".modal");
+  // const form = document.querySelector("fonm");
 
-  // form.onsubmit = checkValidity;
+  //  form.onsubmit = checkValidity();
 
   const photographer = await getPhotographer(photographerId);
   const medias = await getMedias(photographerId);
@@ -55,6 +62,9 @@ const loadPage = async () => {
   displayMedias(medias);
   displayTotalLikes(likes);
   displayModal(photographer);
+  //modalTemplate();
+  checkValidity(medias);
+ 
   displayFilters();
   //displayModal(medias);
   // displayCarousel(photos);
