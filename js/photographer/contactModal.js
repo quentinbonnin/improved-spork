@@ -1,4 +1,3 @@
-let isOpen = false;
 
 export const modalTemplate = (name) => {
   return `
@@ -12,7 +11,7 @@ export const modalTemplate = (name) => {
       class="modal"
       name="reserve"
       method="get"
-      onsubmit="return checkValidity();"
+      onsubmit="return checkValidity()"
       >
      
    
@@ -56,18 +55,16 @@ export const modalTemplate = (name) => {
          name="message"
         /><br>
   </div>
-  <input
-      
-      class="btn-submit"
-      type="submit"
-      class="button"
-      value="Envoyer"
-    />
+  <button
+  class ="btn-submit"
+  type="submit"
+  >Envoyer</button>
+ 
   </form>
     
   `;
 };
-
+let isOpen = false;
 export const displayModal = (photographers) => {
   const form = document.querySelector(".modal-body");
   form.innerHTML = [photographers].map(modalTemplate).join("");
@@ -84,22 +81,34 @@ export const displayModal = (photographers) => {
 //   submitEvent.addEventListener('submit' , checkValidity)
 // })
 
-export const checkValidity = (e) => {
+export const displayErrors = (element) => {
+  element.style.display = "block";
+  element.style.color = "red";
+  element.style.fontSize = "1rem";
+};
+
+ export const hideErrors = (element) => {
+  element.style.display = "none";
+};
+
+
+export const checkValidity = () => {
    console.log("super la vie de checkvalidity");
   // console.log(e);
   // // check is from is valid
   // // return true or false
   let isValid = false;
+  let submitDefault = document.querySelector('form');
   let firstName = document.getElementById("first").value;
   let lastName = document.getElementById("last").value;
   let email = document.getElementById("email").value;
   let errorfirstname = document.getElementById("errorfirstname");
   let errorLastName = document.getElementById("errorlastname")
   let errorEmail = document.getElementById("error-mail")
-  let submitDefault = document.querySelector('form');
   
   
-  submitDefault;addEventListener('submit' , function(event) {
+  
+  submitDefault.addEventListener('click' , function(event) {
     event.preventDefault();
   })
 
@@ -129,20 +138,12 @@ export const checkValidity = (e) => {
 };
 
 
- export const displayErrors = (element) => {
-  element.style.display = "block";
-  element.style.color = "red";
-  element.style.fontSize = "1rem";
-};
-
- export const hideErrors = (element) => {
-  element.style.display = "none";
-};
 
 export const toggle = () => {
   isOpen = !isOpen;
   displayModal();
-
+  let submit = document.querySelector('.btn-submit');
+  submit.addEventListener('click' ,checkValidity)
   // isOpen === true assign on submit button call checkValidity
   // get return value from checkValidity do whatever is asked (show an alart or errors etc)
 };

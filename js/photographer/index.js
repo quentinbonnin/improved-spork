@@ -46,13 +46,11 @@ const getMedias = async (photographerId) => {
     .sort((a, b) => a[filter] > b[filter]);
 };
 
+
 const loadPage = async () => {
   const url = new URL(window.location.href);
   const photographerId = url.searchParams.get("id");
-  // const form = document.querySelector("fonm");
-
-  //  form.onsubmit = checkValidity();
-
+  
   const photographer = await getPhotographer(photographerId);
   const medias = await getMedias(photographerId);
   // const photos = getCarouselTemplate(photographerId);
