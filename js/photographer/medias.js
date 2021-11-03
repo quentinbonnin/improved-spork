@@ -66,7 +66,7 @@ export const displayMedias = (medias) => {
     );
 };
 
-export const displayTotalLikes = (likes, price) => {
+export const displayTotalLikes = (likes, { price }) => {
   if (document.querySelector("#total-likes")) {
     return (document.querySelector("#total-likes").innerHTML = likes);
   }
@@ -79,7 +79,7 @@ export const displayTotalLikes = (likes, price) => {
   likesElement.innerHTML = `
                             <p id="total-likes">${likes}</p>
                             <i class="total-heart fas fa-heart"></i>
-                            <p id="total-price">${price}/jours</p>
+                            <p id="total-price">${price}€/jours</p>
                             `;
 
   document.body.append(likesElement);
@@ -89,6 +89,12 @@ export const getTotalLikes = (medias) => {
   return medias.reduce((likes, media) => likes + media.likes, 0);
 };
 
+export const filterLikes = ({ medias, likes }) => {
+  const likesButton = document.querySelector(".dropdown-button");
+  likesButton.addEventListener("click", () => {
+    medias.sort((a, b) => a[likes] > b[likes]);
+  });
+};
 // export const displayCarousel = (medias) => {
 //   const photographerCarousel = document.querySelector("#carousel");
 

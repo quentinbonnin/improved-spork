@@ -1,4 +1,3 @@
-
 export const modalTemplate = (name) => {
   return `
   <div>
@@ -11,10 +10,7 @@ export const modalTemplate = (name) => {
       class="modal"
       name="reserve"
       method="get"
-      onsubmit="return checkValidity()"
       >
-     
-   
     <div
       class="formData">
       <label>Prénom</label><br>
@@ -60,26 +56,23 @@ export const modalTemplate = (name) => {
   type="submit"
   >Envoyer</button>
  
-  </form>
-    
-  `;
+  </form>`;
 };
+
 let isOpen = false;
-export const displayModal = (photographers) => {
+
+export const displayModal = ({ name }) => {
   const form = document.querySelector(".modal-body");
-  form.innerHTML = [photographers].map(modalTemplate).join("");
+  form.innerHTML = modalTemplate(name);
+  form.onsubmit = checkValidity;
   form.style.display = isOpen ? "flex" : "none";
+
   const crossModal = document.querySelector(".contact-cross");
+
   crossModal.addEventListener("click", () => {
     form.style.display = "none";
   });
-  console.log(photographers.name)
 };
-// const submitDefault = document.querySelector(".modal");
-// submitDefault.addEventListener('submit' , function(submitEvent) {
-//   submitEvent.preventdefault();
-//   submitEvent.addEventListener('submit' , checkValidity)
-// })
 
 export const displayErrors = (element) => {
   element.style.display = "block";
@@ -87,63 +80,51 @@ export const displayErrors = (element) => {
   element.style.fontSize = "1rem";
 };
 
- export const hideErrors = (element) => {
+export const hideError = (element) => {
   element.style.display = "none";
 };
 
-
 export const checkValidity = () => {
-   console.log("super la vie de checkvalidity");
-  // console.log(e);
-  // // check is from is valid
-  // // return true or false
-  let isValid = false;
-  let submitDefault = document.querySelector('form');
+  console.log("checkValidity");
+
+  let isValid = true;
+  let submitDefault = document.querySelector("form");
   let firstName = document.getElementById("first").value;
   let lastName = document.getElementById("last").value;
   let email = document.getElementById("email").value;
   let errorfirstname = document.getElementById("errorfirstname");
-  let errorLastName = document.getElementById("errorlastname")
-  let errorEmail = document.getElementById("error-mail")
-  
-  
-  
-  submitDefault.addEventListener('click' , function(event) {
-    event.preventDefault();
-  })
+  let errorLastName = document.getElementById("errorlastname");
+  let errorEmail = document.getElementById("error-mail");
+
+  // submitDefault.addEventListener("click", function (event) {
+  //   event.preventDefault();
+  // });
 
   if ((firstName = "" || firstName.length < 2)) {
-    isValid
     displayErrors(errorfirstname);
-    
+    isValid;
   } else {
-    hideErrors(errorfirstname);
+    hideError(errorfirstname);
   }
   if ((lastName = "" || lastName.length < 2)) {
-    isValid
     displayErrors(errorLastName);
-    
+    isValid;
   } else {
-    hideErrors(errorLastName);
+    hideError(errorLastName);
   }
   if (/^([a-z]\.?)+@([a-z]+\.)+[a-z]+$/.test(email) == false) {
-    isValid
-     displayErrors(errorEmail);
-   
+    displayErrors(errorEmail);
+    isValid;
   } else {
-    hideErrors(errorEmail);
+    hideError(errorEmail);
   }
-    return isValid = true;
-  
+
+  return (isValid === false) === alert("merci");
 };
-
-
 
 export const toggle = () => {
   isOpen = !isOpen;
-  displayModal();
-  let submit = document.querySelector('.btn-submit');
-  submit.addEventListener('click' ,checkValidity)
-  // isOpen === true assign on submit button call checkValidity
-  // get return value from checkValidity do whatever is asked (show an alart or errors etc)
+
+  const form = document.querySelector(".modal-body");
+  form.style.display = isOpen ? "flex" : "none";
 };

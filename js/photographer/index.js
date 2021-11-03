@@ -2,55 +2,65 @@ import { displayProfile } from "./profile.js";
 import {
   displayMedias,
   displayTotalLikes,
+  filterLikes,
   getTotalLikes,
   // displayCarousel,
   // getCarouselTemplate,
 } from "./medias.js";
-import { displayModal, modalTemplate, checkValidity,  } from "./contactModal.js";
 
-const getPhotographer = async (id , name) => {
+import { displayModal } from "./contactModal.js";
+
+const getPhotographer = async (id, name) => {
   const response = await fetch("../FishEyeData.json");
 
   const { photographers } = await response.json();
 
-  return photographers
-  .find((photographer) => String(photographer.id) === id)
+  return photographers.find((photographer) => String(photographer.id) === id);
 };
-
-let filter = "likes"; // dates or likes
+//
+// let filter = "likes"; // dates or likes
 
 const displayFilters = () => {
-  const dropdownButton = document.querySelector(".dropdown-button");
+  const dropdownButton = document.querySelector("#dropdown-icon");
+  const dropDownUp = document.createElement("i");
+  dropDownUp.className = "fas fa-angle-up";
+  dropDownUp.innerHTML;
   const dropdownOpen = document.querySelector("#dropdown-open");
-  const linkTitle = document.querySelector(".link-title")
+  const linkTitle = document.querySelector(".link-title");
   dropdownButton.addEventListener("click", () => {
     dropdownOpen.classList.toggle("is-visible");
+    dropdownButton.replaceWith(dropDownUp);
+
+    dropDownUp.addEventListener("click", () => {
+      dropdownOpen.classList.toggle("is-not-visible");
+      dropDownUp.replaceWith(dropdownButton);
+    });
   });
 
-  linkTitle.addEventListener("click" , () => {
-    getMedias(photographerId)
-  })
-
-
-  // onclick I should see my options
-  // onclick one of my options :
-  // 1 set a variable about filters 2 (bonus) set a query parameter from url assign to this filter
+  linkTitle.addEventListener("click", () => {
+    getMedias(photographerId);
+  });
 };
 
 const getMedias = async (photographerId) => {
   const response = await fetch("../FishEyeData.json");
   const { media } = await response.json();
-
-  return media
-    .filter((element) => String(element.photographerId) === photographerId)
-    .sort((a, b) => a[filter] > b[filter]);
+  // const likesButton = document.querySelector(".dropdown-button");
+  // let filter = "likes";
+  // likesButton.addEventListener("click", () => {
+  //   media.sort((a, b) => a[filter] > b[filter]);
+  //   console.log(likesButton);
+  // });
+  return media.filter(
+    (element) => String(element.photographerId) === photographerId
+  );
+  // .sort((a, b) => a[filter] > b[filter]);
 };
-
 
 const loadPage = async () => {
   const url = new URL(window.location.href);
   const photographerId = url.searchParams.get("id");
-  
+
   const photographer = await getPhotographer(photographerId);
   const medias = await getMedias(photographerId);
   // const photos = getCarouselTemplate(photographerId);
@@ -58,14 +68,10 @@ const loadPage = async () => {
 
   displayProfile(photographer);
   displayMedias(medias);
-  displayTotalLikes(likes);
+  displayTotalLikes(likes, photographer);
   displayModal(photographer);
-  //modalTemplate();
-  checkValidity(medias);
- 
+  filterLikes(medias);
   displayFilters();
-  //displayModal(medias);
-  // displayCarousel(photos);
 };
 
 (async () => {

@@ -151,10 +151,12 @@
   flex-direction: column;
   display: none;
   position: fixed;
-  bottom: 25%;
-  width: 25%;
-  height: 50%;
-  left: 40rem;
+  width: 30rem;
+  height: 35rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
   background: #db8876;
 }
 
@@ -176,11 +178,11 @@ input {
   border-radius: 0.2rem;
 }
 
-#Errorfirstname {
+#errorfirstname {
   display: none;
 }
 
-#Errorlastname {
+#errorlastname {
   display: none;
 }
 
@@ -190,6 +192,10 @@ input {
 
 .is-visible {
   display: flex;
+}
+
+.is-not-visible {
+  display: none;
 }
 
 .formData {
@@ -226,4 +232,8 @@ input {
   right: 1rem;
   top: 1rem;
   color: white;
+}
+
+#icon-transparent {
+  display: none;
 }
