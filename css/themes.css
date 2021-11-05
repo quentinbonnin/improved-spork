@@ -1,4 +1,5 @@
 :root {
+  --spacing-xxs: 0.2rem;
   --spacing-xs: 0.5rem;
   --spacing-base: 1rem;
   --spacing-xl: 2rem;
@@ -15,13 +16,22 @@
   --font-size-large: 2rem;
   --border-radius-photos: 7rem;
   --margin-top-photographers: 5rem;
+  --height-message: 6rem;
+  --width-base: 20rem;
+  --width-dropdown: 10rem;
+  --width-element-likes: 15rem;
   --width-photo: 35rem;
+  --input-width: 15rem;
   --height-photo: 35rem;
+  --height-modal-body: 35rem;
+  --width-modal-body: 30rem;
   --width-xl: 75%;
+  --pourcent-medium: 50%;
   --height-block-photographer: 17rem;
   --width-photographer-img: 24rem;
   --height-photographer-img: 30rem;
   --border-radius-photographer-img: 0.3rem;
   --width-photographer-block: 35%;
   --border-radius-base: 2rem;
+  --width-btn-submit: 8rem;
 }

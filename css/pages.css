@@ -87,10 +87,10 @@
   position: relative;
 }
 .dropdown {
-  margin-left: 1rem;
+  margin-left: var(--spacing-base);
 }
 .dropdown-button {
-  height: 3rem;
+  height: var(--spacing-xxl);
   width: 10rem;
   color: white;
   background-color: #901c1c;
@@ -106,12 +106,12 @@
   background-color: #901c1c;
   position: absolute;
   left: 76px;
-  top: 3rem;
+  top: var(--spacing-xxl);
   display: none;
 }
 .dropdown-open__link {
-  height: 3rem;
-  width: 10rem;
+  height: var(--spacing-xxl);
+  width: var(--width-dropdown);
   text-align: center;
   color: white;
   display: flex;
@@ -120,13 +120,13 @@
 }
 
 .element__likes {
-  bottom: 1rem;
+  bottom: var(--spacing-base);
   position: fixed;
-  right: 3rem;
+  right: var(--spacing-xxl);
   display: flex;
   justify-content: space-around;
   background: #db8876;
-  width: 15rem;
+  width: var(--width-element-likes);
 }
 
 .total-heart {
@@ -143,7 +143,7 @@
 }
 
 .carousel__photos {
-  width: 2rem;
+  width: var(--spacing-xl);
   height: 5rem;
 }
 
@@ -151,31 +151,31 @@
   flex-direction: column;
   display: none;
   position: fixed;
-  width: 30rem;
-  height: 35rem;
-  top: 50%;
-  left: 50%;
+  width: var(--width-modal-body);
+  height: var(--height-modal-body);
+  top: var(--pourcent-medium);
+  left: var(--pourcent-medium);
   transform: translate(-50%, -50%);
   z-index: 2;
   background: #db8876;
 }
 
 .text-message {
-  height: 4rem;
+  height: var(--spacing-large);
 }
 
 input {
-  width: 15rem;
-  margin-top: 0.2rem;
-  margin-bottom: 0.5rem;
+  width: var(--input-width);
+  margin-top: var(--spacing-xxs);
+  margin-bottom: var(--spacing-xs);
 }
 
 .Modal-button {
-  padding: 0.5rem;
+  padding: var(--spacing-xs);
   background-color: #901c1c;
   color: white;
   border: none;
-  border-radius: 0.2rem;
+  border-radius: var(--spacing-xxs);
 }
 
 #errorfirstname {
@@ -199,28 +199,28 @@ input {
 }
 
 .formData {
-  margin-left: 2rem;
+  margin-left: var(--spacing-xl);
 }
 
 .contact-photographer {
   display: flex;
-  margin-left: 2rem;
-  font-size: 2rem;
+  margin-left: var(--spacing-xl);
+  font-size: var(--font-size-large);
 }
 
 #message {
-  height: 6rem;
-  width: 20rem;
+  height: var(--height-message);
+  width: var(--width-base);
 }
 
 .text-control {
-  width: 20rem;
+  width: var(--width-base);
 }
 
 .btn-submit {
-  height: 3rem;
-  width: 8rem;
-  margin-left: 2rem;
+  height: var(--spacing-xxl);
+  width: var(--width-btn-submit);
+  margin-left: var(--spacing-xl);
   color: white;
   background-color: #911c1c;
   border: none;
@@ -229,8 +229,8 @@ input {
 
 .contact-cross {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: var(--spacing-base);
+  top: var(--spacing-base);
   color: white;
 }
 

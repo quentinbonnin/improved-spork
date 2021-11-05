@@ -28,8 +28,8 @@ const displayFilters = () => {
   const dropdownOpen = document.querySelector("#dropdown-open");
   const linkTitle = document.querySelector(".link-title");
   dropdownButton.addEventListener("click", () => {
-    dropdownOpen.classList.toggle("is-visible");
     dropdownButton.replaceWith(dropDownUp);
+    dropdownOpen.classList.toggle("is-visible");
 
     dropDownUp.addEventListener("click", () => {
       dropdownOpen.classList.toggle("is-not-visible");
@@ -45,11 +45,9 @@ const displayFilters = () => {
 const getMedias = async (photographerId) => {
   const response = await fetch("../FishEyeData.json");
   const { media } = await response.json();
-  // const likesButton = document.querySelector(".dropdown-button");
+
   // let filter = "likes";
-  // likesButton.addEventListener("click", () => {
-  //   media.sort((a, b) => a[filter] > b[filter]);
-  //   console.log(likesButton);
+
   // });
   return media.filter(
     (element) => String(element.photographerId) === photographerId
