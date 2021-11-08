@@ -16,5 +16,4 @@ export const getDropdownTemplate = () => {
 export const displayDropDown = () => {
   const dropDown = document.querySelector("#sortby");
   dropDown.innerHTML = getDropdownTemplate();
-  displayDropDown();
 };
