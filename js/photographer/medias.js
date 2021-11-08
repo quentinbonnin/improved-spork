@@ -66,12 +66,15 @@ export const displayMedias = (medias) => {
     );
 };
 
-export const displayTotalLikes = (likes, { price }) => {
-  if (document.querySelector("#total-likes")) {
-    return (document.querySelector("#total-likes").innerHTML = likes);
-  }
-  if (document.querySelector("#total-price")) {
-    return (document.querySelector("#total-price").innerHTML = price);
+export const displayTotalLikes = (likes, { price } = {}) => {
+  if (
+    document.querySelector("#total-likes") ||
+    document.querySelector("#total-price")
+  ) {
+    document.querySelector("#total-likes").innerHTML = likes;
+    if (price) document.querySelector("#total-price").innerHTML = price;
+
+    return;
   }
 
   const likesElement = document.createElement("div");
